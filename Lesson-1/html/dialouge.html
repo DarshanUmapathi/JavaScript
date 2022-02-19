@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dialouge boxes</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="click_button">
+            <p>Alert Dialog Box</p>
+            <input type="button" value="Alert" onclick="warn()">
+        </div>
+
+        <div id="click_button_confirm">
+            <p>Confirmation Dialoge Box</p>
+            <input type="button" value="Confirm" onclick="getConfirm()">
+        </div>
+
+        <div id="click_button_prompt">
+            <p>Confirmation Dialoge Box</p>
+            <input type="button" value="Prompt" onclick="getPrompt()">
+        </div>
+
+        <div id="click_button_prompt">
+            <p>Enter two Number to be added</p>
+            <label for="number1">Number 1 </label>
+            <input type="number" id="number1" name="number1"> <br/>
+            <label for="number2">Number 2 </label>
+            <input type="number" id="number2" name="number2"><br/>
+            <input type="submit" value="addNumbers" onclick="getAddition()">
+        </div>
+
+        <div id="click_subtraction">
+            <p>Enter two Number to be Subtracted</p>
+            <label for="num1">Number 1 </label>
+            <input type="number" id="num1" name="number1"> <br/>
+            <label for="num2">Number 2 </label>
+            <input type="number" id="num2" name="number2"><br/>
+            <input type="submit" value="Subtract" onclick="getSubs()">
+        </div>
+
+        <div id="click_division_strings">
+            <p>Arthmetic operation other than + on strings</p>
+            <label for="division1">Number 1 </label>
+            <input type="text" id="division1" name="division1"><br/>
+            <label for="division2">Number 2</label>
+            <input type="text" id="division2" name="division2"><br/>
+            <input type="submit" value="Div" onclick="getdiv()">
+
+        </div>
+
+        <script src="../js/dialogebox.js"></script>
+    </body>
+</html>
