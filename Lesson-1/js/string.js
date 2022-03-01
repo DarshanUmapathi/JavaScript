@@ -1,6 +1,7 @@
 var s = "Hello World";
 var s1 = 'Hello World again';
 var s2 = new String("Hellooooo World");
+var s4 = "Darshan U ";
 
 document.write(s + "<br />");
 document.write(s1 + "<br />");
@@ -20,9 +21,11 @@ function mymet(){
 }
 
 document.write("Search " + s1.search("l")+"<br />");
-document.write("Reverse "+ s1.split(' ').reverse().join('') + "<br />");
+document.write("Reverse "+ s1.split(' ').reverse().join(' ') + "<br />");
 
 var stringArray = new Array();
 
 s1.split(" ").forEach(e => stringArray.push(e));
-document.write(stringArray[2]);
+document.write(stringArray[2] + "<br />");
+
+document.write(s4.split("").reverse().join(""));
