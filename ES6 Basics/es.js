@@ -107,7 +107,7 @@ let employeeArray = employee.map((items, i) => {
 });
 
 console.log(employeeArray);
-document.write(JSON.stringify(employeeArray));
+document.write(JSON.stringify(employeeArray) + "<br />");
 
 const employees = [
   { name: "John kemp", exp: 5, empId: 121 },
@@ -136,3 +136,71 @@ const emps = employees.filter((items) => {
 });
 
 console.log(emps);
+
+document.write("Classes in ES6" + "<br />");
+
+// We use the class Keyword Here
+
+class Person {
+  constructor(name, birthYear, job) {
+    this.name = name;
+    this.yearOfBirth = birthYear;
+    this.job = job;
+  }
+  // Methods for getting details about Person
+  getDetails = () => {
+    //return "Name: " + this.name + " " + "and age is : " + (2022-this.yearOfBirth) ;
+    return `Name: ${this.name} and age is :  ${2022 - this.yearOfBirth}`;
+  };
+}
+
+let res = new Person("John", 1950);
+console.log(res.getDetails());
+
+// Inherent
+
+class Profession extends Person {
+  constructor(name, birthYear, job, exp, type, lisence) {
+    super(name, birthYear, job);
+    this.exp = exp;
+    this.type = type;
+    this.lisence = lisence;
+  }
+
+  getExp = () => {
+    return `Name: ${this.name} has a total of ${this.exp} in ${this.type}`;
+  };
+}
+
+let pro = new Profession("John", 1951, "Pilot", 25, "commercial", "ACTIVE");
+console.log(pro.getDetails());
+console.log(pro.getExp());
+
+const postlistPromise = new Promise((resolve, reject) => {
+  $.get("https://jsonplaceholder.typicode.com/posts", (data) => {
+    console.log(data);
+    resolve(data);
+  }).fail((err) => {
+    reject(err);
+  });
+});
+
+const postidPromise = (data) =>
+  new Promise((resolve, reject) => {
+    console.log(data[0].id);
+    $.get(
+      `https://jsonplaceholder.typicode.com/posts/${data[0].id}`,
+      (data) => {
+        resolve(data);
+      }
+    ).fail((err) => {
+      reject(err);
+    });
+  });
+
+postlistPromise
+  .then(postidPromise)
+  .then((response) => console.log(response))
+  .catch((error) => {
+    console.log("Post Failed", error);
+  });
